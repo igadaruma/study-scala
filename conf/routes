@@ -1,0 +1,2 @@
+# URLに対する処理(メソッド)の割当を行っている設定ファイルです。
+GET        /        controllers.StudyController.study
