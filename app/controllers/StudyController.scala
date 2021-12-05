@@ -9,22 +9,32 @@ class StudyController @Inject()(val controllerComponents: ControllerComponents) 
 
   def study = Action { _ =>
     // 2. 型
-    // 2-2. 演算子とString型の足し算
+    // 2-3. 初めてのInt(整数)型
 
-    val message1: String = "はい。" // String(文字列)型
-    val message2 = "みなさん、こんばんは。" // String(文字列)型 (型アノテーションがなくても型がなくなることはあーりません。)
+    // そろそろString以外の型もみていきましょう。そうしましょう。
+    // 今回はInt(整数)型です。整数は非常によく使うことになると思います。
+    
+    val integer1: Int = 1 // 整数を書くとInt(整数)型のリテラル(データ)になります。
+    val integer2 = 2 // 型アノテーションは省略できやす。(型がなくなるわけではないですよっと)。
+    
+    // ちなみに！
+    // 以下のようにInt型の変数にString型を入れようとするとエラーになっちゃいます。
+    // val integer: Integer = "Hello"
+    // ※逆も同じです。
 
-    // String型とString型は足し算(?)できます。
-    // 以下は、変数message1と変数message2を足し算したものを変数messageに入れてます。
-    val message: String = message1 + message2
+    // Int型とInt型だって、足し算できます。もちろんさ。
+    val integer: Int = integer1 + integer2
     
-    // String型とString型を足すと、双方が結合された文字列になります。
-    Ok(message).as(HTML) // "はい。みなさん、こんばんは。"
+    // ここで！
+    // お馴染みの、Ok()の中に入る値は、実は、
+    // String型は指定できますが、Int型はだめょという型制約があります。
+    // つまり以下はエラーになります。
+    // Ok(integer).as(HTML)
     
-    // 今回`+`記号が出てきましたが、
-    // こんな感じで、計算を行うための記号等を"演算子"と呼んだりします。
-    // ちなみに変数に値を入れている`=`も代入演算子と呼ばれるような演算子の一種です。
-    // (※今まで隠していましたが変数に値を入れることを"代入"といったりします。ひみつやで🤫)
+    // IntをStringに変換することでエラーを回避できます。
+    Ok(integer.toString).as(HTML) // `.toString`をつけるとString型に転生できます。
+    
+    // この型による制約がミソです。今は、ふーん。でOKです。
   }
 
 }
