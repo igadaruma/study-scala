@@ -9,20 +9,30 @@ class StudyController @Inject()(val controllerComponents: ControllerComponents) 
 
   def study = Action { _ =>
     // 2. 型
-    // 2-5. Int型とDouble型
+    // 2-6. String型とInt型
+
+    val string: String = "10"
+    val integer: Int = 2
+
+    // String型とInt型を足すと文字列結合になります。おっと？
+    val result1: String = string + integer // = "102" 
+
+    // String型に`.toInt`をつけるとInt型に変換できます。
+    val result2: Int = string.toInt + integer //  = 12
     
-    // IntとDoubleを四則演算した結果は、
-    // より精度の高いDouble型になります。
+    // 以下は String型(result1) + String型(",") + Int型(12) で、最終的にString型になっている例です。
+    val result: String = result1 + "," + result2 // "102,12"
     
-    val int: Int = 2 // Int(整数)型
-    val double: Double = 0.1 // Double(小数)型
-    val result = int * double // `*`は掛け算です。
+    Ok(result).as(HTML)
     
-    Ok(result.toString).as(HTML)
-    
-    // 【注意】
-    // この挙動(Double型になる)はScala限定の話です。
-    // 他のプログラミング言語で同じ挙動になるとは限らないです。
+    //【!注意!】
+    // 以下のような整数になりえないString型の値を`toInt`するとエラーになってしまいます。
+    // "数字じゃないょ".toInt  
+    // より安全に変換するために`toIntOption`というのがありますが、まだ秘密です🤫
+
+    //【参考】
+    // `toDouble`,`toDoubleOption`等、他の型に変換できるやつもあります。
+
   }
 
 }
