@@ -9,32 +9,16 @@ class StudyController @Inject()(val controllerComponents: ControllerComponents) 
 
   def study = Action { _ =>
     // 2. 型
-    // 2-3. 初めてのInt(整数)型
+    // 2-4. 初めてのDouble(小数)型
 
-    // そろそろString以外の型もみていきましょう。そうしましょう。
-    // 今回はInt(整数)型です。整数は非常によく使うことになると思います。
-    
-    val integer1: Int = 1 // 整数を書くとInt(整数)型のリテラル(データ)になります。
-    val integer2 = 2 // 型アノテーションは省略できやす。(型がなくなるわけではないですよっと)。
-    
-    // ちなみに！
-    // 以下のようにInt型の変数にString型を入れようとするとエラーになっちゃいます。
-    // val integer: Integer = "Hello"
-    // ※逆も同じです。
+    // 整数をやったので今回は小数型です。
+    // こちらもよく使うことになると思います。
 
-    // Int型とInt型だって、足し算できます。もちろんさ。
-    val integer: Int = integer1 + integer2
+    val double1: Double = 0.1 // Double(小数)型
+    val double2 = 0.5 // 小数リテラルは、Double型として判定されます。
+    val double: Double = double2 - double1 // 足し算はもうマスターしたので引き算してみましょう。
     
-    // ここで！
-    // お馴染みの、Ok()の中に入る値は、実は、
-    // String型は指定できますが、Int型はだめょという型制約があります。
-    // つまり以下はエラーになります。
-    // Ok(integer).as(HTML)
-    
-    // IntをStringに変換することでエラーを回避できます。
-    Ok(integer.toString).as(HTML) // `.toString`をつけるとString型に転生できます。
-    
-    // この型による制約がミソです。今は、ふーん。でOKです。
+    Ok(double.toString).as(HTML) // Double型も`.toString`でString型に変身できます。
   }
 
 }
