@@ -9,47 +9,63 @@ class StudyController @Inject()(val controllerComponents: ControllerComponents) 
 
   def study = Action { _ =>
     // 2. 型
-    // 2-8. 基本型いろいろ
+    // 2-9. 演算子色々
 
-    // Scalaの基本型(言語に元から存在する型で最も基本的なもの)の一部を紹介しちゃいます。
-    // 基本型以外にも、元から存在する型という意味では、もっと大量にあります。
-    // それら全部はとても覚えられないので必要に応じて都度都度、勉強します。
-    // 以下の基本型についても、おそらくBoolean, Int(Long), Double, String以外はそれほど使わないで済むことが多いと思います。
+    // これまでも演算子はいくつか利用してきましたが、もうちょっと紹介しちゃいます。
+    // 実は、実体はメソッドと呼ばれるものなのですが、今は秘密です🤫
 
-    // 論理系
-    val boolean: Boolean = true // 論理型です。trueかfalseしか値を持ちません。ブーリアンとよみます。
-    // true ≒ YES
-    // false ≒ NO
-    // みたいな感じです(?)
-    // で、それなに？という感じかもしれません。もうちょっとしたら詳しくでてきますので、今は気にせず。
+    // 算数系🔢(以下は全部Int型ですが任意の数値系の型で利用できます)
+    // 足し算
+    val addition = 10 + 1 // 11
+    // 引き算
+    val subtraction = 10 - 1 // 9
+    // 掛け算
+    val multiplication = 10 * 2 // 20
+    // 割り算(0で割り算するとエラーになるで。注意やで🥴)
+    val division = 10 / 5 // 2 
+    // 割り算のあまり
+    val remainder = 10 % 3 // 1
 
-    // 数値系(整数) 持てる値の範囲によって色々あります。
-    val byte: Byte = 1 // 整数値型 -128 ~ 127 
-    val short: Short = 2 // 整数値型 -32768 ~ 32767
-    val int: Int = 3 // 整数値型 -2147483648 ~ 2147483647
-    val long: Long = 4L // 整数値型 Lを数字リテラルにつけるとLong型になります。 -9223372036854775808 ~ 9223372036854775807
-    // 数値系(小数) 
-    val float: Float = 0.1f // 小数値型 小数リテラルにfをつけるとFloat型になります。Doubleより扱える値の範囲が狭いです。
-    val double: Double = 0.1 // 少数値型
-    // 何かしらの必要に迫られない限りは、広い範囲が扱える型を使えば良いとお考えくださいませ。
-    // 型の範囲外の値を入れようとすると、大変なことになります(一周回って数が減ったり増えたり)💥
+    // 論理演算(Boolean型の結果を返すものです)
+    // 等しい
+    val eq1 = 1 == 1 // true  <- "1は1と等しい"は真
+    val eq2 = 1 == 2 // false <- "1は2と等しい"は偽
+    val eq3 = "a" == "a" // true  <- "aはaと等しい"は真
+    val eq4 = "a" == "b" // false <- "aはbと等しい"は偽
+    // 等しくない
+    val ne1 = 1 != 2 // true  <- "1は2と等しくない"は真
+    val ne2 = 1 != 1 // false <- "1は1と等しくない"は偽
+    // 小なり
+    val lt1 = 1 < 2 // true  <- "1は2より小さい"は真
+    val lt2 = 2 < 2 // false <- "2は2より小さい"は偽
+    val lt3 = "a1" < "a2" // true  <- 文字列の場合は名前の順です(日本語での利用はおすすめしません)。
+    val lt4 = "b1" < "a1" // false  <- 文字列の場合は名前の順です(日本語での利用はおすすめしません)。
+    // 小なりイコール
+    val le1 = 2 <= 2 // true <- "2は2より小さいか等しい"は真
+    val le2 = 3 <= 2 // false <- "3は2より小さいか等しい"は偽
+    // 大なり
+    val gt1 = 3 > 2 // true <- "3は2より大きい"は偽
+    val gt2 = 2 > 2 // false <- "2は2より大きい"は偽
+    // 大なりイコール
+    val ge1 = 2 >= 2 // false <- "1は2より大きい"は偽
+    val ge2 = 2 >= 2 // false <- "1は2より大きい"は偽
+    // 否定(反転)
+    val denial1 = !false // true   
+    val denial2 = !true // false
 
-    // 文字系
-    val char: Char = 'c' // 文字型。1文字だけの型です。`'`の記号で挟んだ文字は文字型リテラルです。
-    val string: String = "string" // 文字列型
-
-    Ok(
-      s"""boolean = $boolean<br>
-         |byte = $byte<br>
-         |short = $short<br>
-         |int = $int<br>
-         |long = $long<br>
-         |float = $float<br>
-         |double = $double<br>
-         |char = $char<br>
-         |string = $string<br>
-         |""".stripMargin).as(HTML)
-
+    // 論理演算の組合せ
+    // AND,かつ,両方とも
+    val and1 = true && true     // true
+    val and2 = true && false    // false
+    val and3 = false && false   // false
+    val and4 = 1 == 1 && 1 != 2 // true "1は1と等しい かつ 1は2と等しくない"は真
+    // OR,または,どっちか
+    val or1 = true || true     // true
+    val or2 = true || false    // true
+    val or3 = false || false   // false
+    val or4 = 1 == 1 || 1 == 2 // true "1は1と等しい または 1は2と等しい"は真
+    
+    Ok("他にも計算はたくさんありますがJOJOにネ！").as(HTML)
   }
 
 }
