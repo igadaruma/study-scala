@@ -9,67 +9,69 @@ class StudyController @Inject()(val controllerComponents: ControllerComponents) 
 
   def study = Action { _ =>
     // 6. クラス
-    // 6-2. フィールド
+    // 6-3. メソッド
 
-    // クラスでは、クラスパラメータ(クラス定義のクラス名のすぐ後の丸括弧の中のフィールド群)に
-    // 指定した値以外も、追加で値を保持することができます。
-    // 例えば前回のCoinsに合計値を保持する変数を追加してみましょう。
+    // クラスでは、前回の変数(フィールド)に加えて、
+    // 関数も中に含むことができます。
+    // 前々回の`exchange500For100`関数のように、
+    // クラスの中でなくても、当然定義できるのですが、
+    // クラスの中に、"そのクラスと関係の深い"処理を含めておけば、
+    // 読みやすいプログラムに仕上げられる場合があります。
+
+    // こういったクラス内の関数を、
+    // "メソッド"と呼びます。"メンバ関数"とも呼ばれたりします。
+    // フィールドと同様に、他にも、
+    // 単に"メンバ"・"プロパティ"などと呼ばれることもあるのでご注意ください。
+
+    // 例として、`exchange500For100`をメソッドとして定義してみましょう。
 
     class Coins(val fiveHundred: Int,
                 val oneHundred: Int,
                 val fifty: Int,
                 val ten: Int,
                 val five: Int,
-                val one: Int) { // 追加の`{}`括弧を書きます。
-      // 中に追加のフィールドを定義できます。
-      // 合計値を`sum`という名前で保持しています。
-      // ※これはnewのタイミングで計算されます。
+                val one: Int) {
+
       val sum: Int = (500 * fiveHundred) + (100 * oneHundred) + (50 * fifty) + (10 * ten) + (5 * five) + one
+
+      // これです。
+      def exchange500For100(): Coins = {
+        val exchanged100coins = fiveHundred * 5
+        new Coins(0, oneHundred + exchanged100coins, fifty, ten, five, one)
+      }
+
+      // 前々回の`exchange500For100`の定義は以下です。
+      // 引数と`coins.`部分が上記ではなくなっています。
+
+      // def exchange500For100(coins: Coins): Coins = {
+      //   val exchanged100coins = coins.fiveHundred * 5
+      //   new Coins(0, coins.oneHundred + exchanged100coins, coins.fifty, coins.ten, coins.five, coins.one)
+      // }
+
     }
 
-    // ※前回でも軽く触れましたが、クラスパラメータ内の変数も、
-    // それ以外のクラス内の変数もあわせてフィールドと呼んだりします。
-    // 他にもメンバ変数と表現したりもします。
+    // クラス定義での`{}`の中で定義する以外は、
+    // 表記上のルールは今までの関数と変わりません。
 
-    // 【補足事項】
-    // より抽象的な呼び方になりますが、
-    // 単に"メンバ"・"プロパティ"などと言ったりもします。
-    // 厳密な言葉の定義はプログラミング言語や組織によって方言もあるので、
-    // 一概には捉えにくいのですが、
-    // 他のプログラマと話す際は、前後の文脈等から、
-    // 『この人は今はこの言葉をフィールドに対して使ってるんだな。』
-    // といった脳内変換が必要な場面も出てくるかもしれません。
-    // もちろん逆に、相手が思う言葉の定義と違う使い方を自分がしている可能性もあるので、
-    // 大事な場面では、誤解が発生しないように、注意して話す必要があるかもしれません。
-    // 【補足事項 終わり】
+    // ただし、上記の例の通り、メソッドの場合は、
+    // 同じクラス内の他フィールドやメソッドを`.`等をつけずに
+    // 参照できるという特徴があります。
+    // これのお陰で、処理の内容次第ですが表記を簡素化することができます。
 
-    // クラスパラメータにないフィールドは、
-    // newでインスタンスを生成する時には指定しませんが、
-    // 値をとってくる時は同様に`.`を付けて参照します。
-    // 例を見ていきましょう。
-    val coins1 = new Coins(1, 1, 1, 1, 1, 1)
-    val sumCoins1 = coins1.sum // `.`で参照
-    // (500 * 1) + (100 * 1) + (50 * 1) + (10 * 1) + (5 * 1) + 1 = 666
-
-    val coins2 = new Coins(2, 2, 2, 2, 2, 2)
-    val sumCoins2 = coins2.sum
-    // (500 * 2) + (100 * 2) + (50 * 2) + (10 * 2) + (5 * 2) + 2 = 1332
-    
-    // クラス定義とnewによるインスタンス生成の関係が、
-    // 捉えづらい方も多いと思います。
-    // 上記の例のように、coins1とcoins2は同じクラスからnewしていますが、
-    // 指定されたクラスパラメータによって、中に保持している値は別ものになります。
-    
-    // 余計に混乱させてしまう可能性もありますが、
-    // クッキーを焼く時の、金型がクラスで、
-    // クッキー自体が、newで生成されるインスタンスのような感じです。
-    // 金型が同じでも、クッキーは別ですし、
-    // 生地によって、状態も異なるような感じです🍪
-    
+    // メソッド使う例も見ていきましょう。
+    // 基本的にはフィールドと同様ですが、"()"や引数を指定する形になります。
+    val coins1 = new Coins(1, 2, 3, 4, 5, 6)
+    val coins2 = coins1.exchange500For100()
+        
     Ok(
       s"""
-         |sumCoins1 = $sumCoins1<br>
-         |sumCoins2 = $sumCoins2<br>
+         |coins1.fiveHundred = ${coins1.fiveHundred}<br>
+         |coins1.oneHundred = ${coins1.oneHundred}<br>
+         |coins1.sum = ${coins1.sum}<br>
+         |<br>
+         |coins2.fiveHundred = ${coins2.fiveHundred}<br>
+         |coins2.oneHundred = ${coins2.oneHundred}<br>
+         |coins2.sum = ${coins2.sum}<br>
          |""".stripMargin).as(HTML)
 
   }
