@@ -9,91 +9,75 @@ class StudyController @Inject()(val controllerComponents: ControllerComponents) 
 
   def study = Action { _ =>
     // 6. クラス
-    // 6-8. 型と継承と多態性
+    // 6-9. Any型・Object型
 
-    // お馴染み"型"の話です。
-    // 継承関係にある親子クラスの型に関して、
-    // 少しばかし、ややこしい仕様があるので🤔
-    // ここでその一部を解説します。
-
-    // まずは説明のために、
-    // 親子関係を持つクラスの定義です。
-
-    // 鳥クラス(抽象)
-    abstract class Bird() {
-      val chirping: String // 抽象フィールド
-
-      def fly(): String = "ぱたぱた"
-    }
-
-    // すずめクラス
-    class Sparrow extends Bird() {
-      val chirping: String = "ぴよぴよ"
-    }
-
-    // ぺんぎんクラス
-    class Penguin() extends Bird {
-      val chirping: String = "ぶるぁぁぁぁ！"
-
-      override def fly(): String = "無理だよ" // 上書き
-
-      def swim(): String = "すいすーい" // 追加
-    }
-
-    // それでは、、
-
-    // ポイントその①
-    // 子クラスは親(先祖)クラスの型の変数に格納できます。
-    // 同様に、親クラス型が返り値型になっている関数の、
-    // 返り値として指定できます。
-    // 以下は変数の場合の例です。
-    val bird1: Bird = new Sparrow
-    val bird2: Bird = new Penguin
-
-    // ポイントその②
-    // 親(先祖)クラス型の変数に入っていたとしても、
-    // メンバ(フィールド・メソッド)呼び出しを行った場合の処理は、
-    // 実際の子クラスの処理結果になります。
-    val bird1Song = bird1.fly() // "ぱたぱた"
-    val bird2Song = bird2.fly() // "無理だよ"
-    // ※chirpingも同様です。
+    // 今回は番外編です。
+    // よくわからんぞ？となった場合でも気にせず次に進んで問題ないです。
     
-    // 【補足事項】
-    // これは覚えなくていいと思いますが、
-    // こういった挙動を専門用語で多態性(ポリモーフィズム)と呼んだりします。
-    // さらに細かくいうと、多態性の中でも、"サブタイプ多相"に分類されます。
-    // 【補足事項 ここまで】
+    // まずはAny型って何？という話です。
+    // おそらく、もう忘れちゃっていることと思いますが、
+    // 3-4にて登場していた型です。折角なのでぜひこの機会に復習してみてください。
 
-    // ポイントその③
-    // 親(先祖)クラス型の変数に入ると、
-    // "子で独自に追加されたメンバ"をそのまま参照することはできません。
-    // Penguinでは`swim`が追加で定義されていますが、
-    // bird2.swim()
-    // はエラーになってしまいます💣🔥
-
-    // ポイントその③'
-    // swimを呼びたい場合はmatch式を使います。
-    val bird2Swim = bird2 match {
-      case b: Penguin => b.swim() // matchで型チェックが済んでるので、bはPenguin型として扱えます。
-      case _ => "Penguin型ではないです。"
+    // さて、このAny型は、
+    // 全ての型の先祖クラスである、という特別な存在です。
+    // よって、ヴェルタースオリジナルです(スルーしてください)。
+    // なんと自分で定義したクラスについても同じで、
+    // Anyをextendsしていなくても勝手にそうなるのです。
+    
+    // つまり以下のように、
+    // なんでもかんでもAny型の変数に入れることができます。
+    // ※関数の戻り値の型としても同様です。
+    
+    class Something() // 自分で定義したクラス
+    
+    val someAsAny: Any = new Something() // Any型の変数に入る。
+    val stringAsAny: Any = "string"
+    val intAsAny: Any = 10
+    val boolAsAny: Any = true
+    
+    // 一方で、Any型がでてきてしまうと、
+    // match等を使って型を判定する必要が多いので、
+    // 原則避けるべき型という捉え方が良いのではないかと思います。
+    
+    // そして、さらに、
+    // 類似したObjectという型(クラス)というのも存在します。
+    // 以下のように、おおよそAny型と同じなのですが、
+    // 数値型や真偽型はObject型ではないという罠もあります。
+    val someAsObj: Object = new Something() // 自分で定義したクラスは必ずObject型として扱えます。
+    val stringAsObj: Object = "string"
+    // val intAsObj: Object = 10 // エラー
+    // val boolAsObj: Object = true // エラー
+    
+    // この違いからも予想できるかもですが、
+    // AnyはObjectよりも上位なので、Object型の値をAny型の変数には入れられますが、
+    // 逆はだめです。
+    
+    // Object型には`toString`メソッド等がいくつか組込実装されています。
+    // なので、空っぽ定義のSomething型のインスタンスでも、
+    // toStringが呼び出せてしまいます。
+    // わお。
+    val someAsString = (new Something()).toString
+    
+    // ただし、Object型のtoStringが望ましい文字列を返さない事の方が多いと思われますので、
+    // むしろ、仮に同名のtoStringというメソッドを独自実装したい場合は、
+    // `override`する必要があるという点に注意しましょう。
+    
+    class SomethingGreat() {
+      // Object型で定義されているメンバはoverrideが必要
+      override def toString(): String = "偉大だわぁ"
+      
+      // ちなみに、`super.メンバ`で親クラスのメンバを呼び出せます。
+      def toStringByObject(): String = super.toString // Object型で実装されている`toString`を呼び出しています。
     }
     
-    // もっと込み入った話題もありますが、
-    // この③点と今までの話をおさえていれば、
-    // おおよそ継承の基礎はマスターしていると言えると思います✨
-    
-    // ただ、今回の話だけですと、
-    // これの何がうれしいの？ どこで使うの？
-    // というのが、おそらくわからないと思います😭
-    // もう少し後に解説する組込型の`Option`が、
-    // 実際の応用例の1つになります。
-    // 一旦は、そんなもんかぐらいで先に進んでみてください。
+    val sg = new SomethingGreat()
+    val sgAsString = sg.toString()
+    val sgAsStringByObject = sg.toStringByObject()
     
     Ok(
       s"""
-         |bird1Song = $bird1Song<br>
-         |bird2Song = $bird2Song<br>
-         |bird2Swim = $bird2Swim<br>
+         |sgAsString = $sgAsString<br>
+         |sgAsStringByObject = $sgAsStringByObject<br>
          |""".stripMargin).as(HTML)
   }
 
