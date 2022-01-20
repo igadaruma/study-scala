@@ -1,0 +1,7 @@
+# Git管理から除外したいファイルを指定する設定ファイルです。Gitの解説会に乞うご期待?
+logs
+target
+/.bsp
+/.idea
+/.project
+/RUNNING_PID

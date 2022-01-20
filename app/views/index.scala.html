@@ -1,0 +1,21 @@
+@* こんな感じに記載されている箇所は"コメント"と呼ばれ、プログラムからは無視されます。 *@
+@* 書いてあってもなくても全く同じ動作になります。 *@
+
+@* このファイルはHTMLのテンプレート的なものです。 *@
+@* 純粋なHTMLではなく、Play Frameworkによる拡張機能が追加されている感じのイメージです。 *@
+@* 主にコントローラークラスから呼び出される形で利用されます。 *@
+@* 今回はapp/controllers/SampleController.scalaで使われています。 *@
+  
+@* == A: Play領域 START == *@
+@(left: Double, right: Double, answer: Double)
+@* == A: Play領域 END == *@
+
+@* == B: HTMLとして描画される領域 START == *@
+<form method="post">
+  <input type="number" name="left"/> + <input type="number" name="right"/>
+  <input type="submit" value="計算">
+</form>
+@* == C: Play領域 START == *@
+@left + @right = @answer
+@* == C: Play領域 END == *@
+@* == B: HTMLとして描画される領域 END == *@
