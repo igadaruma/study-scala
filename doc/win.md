@@ -24,7 +24,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 ```
 
 上記をコピーして(上記エリア内にカーソルを合わせると右端に出てくるアイコンをクリックすると簡単です)、  
-PowerShell上で貼り付けます(PowerShellウィンドウ上で右クリックすると張り付きます)。  
+PowerShell上で貼り付けます(PowerShellウィンドウ上を右クリックでも張り付きます)。  
 以下のような感じになれば、Enterキーで確定します。
 
 ![choco1.png](image/choco1.png)
@@ -34,12 +34,12 @@ PowerShell上で貼り付けます(PowerShellウィンドウ上で右クリッ�
 ![choco2.png](image/choco2.png)
 
 
-### 2. Git, JDK, sbt, IntelliJのインストール
+### 2. JDK, sbt, IntelliJのインストール
 
 引き続きPowerShellで以下のコマンドを実行します。
 
 ```
-choco install -y git adoptopenjdk8 sbt intellijidea-community
+choco install -y adoptopenjdk8 sbt intellijidea-community
 ```
 
 ![tools1.png](image/tools1.png)
@@ -80,7 +80,7 @@ choco install -y git adoptopenjdk8 sbt intellijidea-community
 
 ![plugin1.png](image/plugin1.png)
 
-IntelliJの再起動が必要うなので、以下のように操作します。
+IntelliJの再起動が必要なので、以下のように操作します。
 
 ![plugin2.png](image/plugin2.png)
 
@@ -92,7 +92,7 @@ IntelliJの再起動が必要うなので、以下のように操作します。
 以下のURLから取得します。詳しくは動画🎥にて。
 
 ```
-https://github.com/igadaruma/my-first-play
+https://github.com/igadaruma/study-scala
 ```
 
 ### 2. IntelliJのsbt shellから起動
