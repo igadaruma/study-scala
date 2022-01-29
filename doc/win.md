@@ -17,11 +17,11 @@ PowerShell(Windowsの組込みソフトウェア)を起動します。
 ※個人パソコンであれば管理者権限が存在すると思いますが、  
 なんらかの理由で`管理者として実行する`が行えない場合は、パソコンの所有者(？)に相談ください・・。
 
-![ps1.png](image/ps1.png)
+![ps1.png](image/win/ps1.png)
 
 以下のような確認のダイアログが出た場合は`はい`を選択します。
 
-![ps2.png](image/ps2.png)
+![ps2.png](image/win/ps2.png)
 
 PowerShellで以下のコマンドを実行します。
 
@@ -33,11 +33,11 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 PowerShell上で貼り付けます(PowerShellウィンドウ上を右クリックで張り付きます)。  
 以下のような感じになれば、Enterキーで確定します。
 
-![choco1.png](image/choco1.png)
+![choco1.png](image/win/choco1.png)
 
 暫く待つと以下のような感じに表示されると思います。グレートです🍫
 
-![choco2.png](image/choco2.png)
+![choco2.png](image/win/choco2.png)
 
 ### 1-2. JDK, sbt, IntelliJのインストール
 
@@ -47,13 +47,13 @@ PowerShell上で貼り付けます(PowerShellウィンドウ上を右クリッ�
 choco install -y adoptopenjdk8 sbt intellijidea-community
 ```
 
-![tools1.png](image/tools1.png)
+![tools1.png](image/win/tools1.png)
 
 暫く(通信速度等によっては数分〜数十分ほどかかるかもしれません)すると、  
 最終的に以下のように表示されて完了すると思います。  
 ※実行タイミングによって、微妙に数字等の表記は異なると思いますが基本的には問題なしです。
 
-![tools2.png](image/tools2.png)
+![tools2.png](image/win/tools2.png)
 
 ここで、インストールしたものたちの解説をしておきます。
 
@@ -72,25 +72,25 @@ choco install -y adoptopenjdk8 sbt intellijidea-community
 デスクトップにIntelliJのショートカットアイコンが増えていると思います。  
 ダブルクリックして起動します。
 
-![idea1.png](image/idea1.png)
+![idea1.png](image/win/idea1.png)
 
 利用規約が表示されるので、チェックを入れて進みます。
 
-![idea2.png](image/idea2.png)
+![idea2.png](image/win/idea2.png)
 
 匿名データとしてあなたの使用情報を集めてよい？みたいな事を聞かれるので、  
 これはどちらでもいいですが、悩めば`Dont't Send`を選択しておけばいいと思います。
 
-![idea3.png](image/idea3.png)
+![idea3.png](image/win/idea3.png)
 
 次にScalaのプラグイン(追加機能みたいな感じ)を下図のように追加します。  
 ※下図"③"は必要に応じて入力ください。
 
-![plugin1.png](image/plugin1.png)
+![plugin1.png](image/win/plugin1.png)
 
 IntelliJの再起動が必要なので、以下のように操作します。
 
-![plugin2.png](image/plugin2.png)
+![plugin2.png](image/win/plugin2.png)
 
 ## 2. サンプルプログラムの起動
 
@@ -99,15 +99,15 @@ IntelliJの再起動が必要なので、以下のように操作します。
 サンプルScalaプログラムをダウンロードしていきます。  
 `Get from VCS`を選択します。
 
-![clone1.png](image/clone1.png)
+![clone1.png](image/win/clone1.png)
 
 (※場合によっては以下にあるかもしれません。)
 
-![clone1-2.png](image/clone1-2.png)
+![clone1-2.png](image/win/clone1-2.png)
 
 (※さらに、もしメニューバーが表示されている状況ならば以下にあります。)
 
-![clone1-3.png](image/clone1-3.png)
+![clone1-3.png](image/win/clone1-3.png)
 
 開いたウィンドウの`URL`に以下のURLを入力します。  
 ※これはダウンロードするプログラム(ソース)がおいてある場所です。
@@ -122,27 +122,27 @@ https://github.com/igadaruma/study-scala
 そして、`Git`というツールをインストールする必要がありますので、  
 `Donwload and Install`をクリックします(表示されていなければスルーでOKです)。
 
-![clone2.png](image/clone2.png)
+![clone2.png](image/win/clone2.png)
 
 以下が表示されたら`はい`を。
 
-![clone3.png](image/clone3.png)
+![clone3.png](image/win/clone3.png)
 
 完了すれば`Clone`(ダウンロード的な処理)します。
 
-![clone4.png](image/clone4.png)
+![clone4.png](image/win/clone4.png)
 
 もし以下が表示されたら`Trust Project`を選択します。
 
-![clone5.png](image/clone5.png)
+![clone5.png](image/win/clone5.png)
 
 もし以下が表示されたら`アクセスを許可する`を選択します。
 
-![clone6.png](image/clone6.png)
+![clone6.png](image/win/clone6.png)
 
 もし以下のようなアドバイスモーダルが表示されたら`Close`を選択します。
 
-![clone7.png](image/clone7.png)
+![clone7.png](image/win/clone7.png)
 
 初めて開く時はIntelliJが色々セットアップしてくれるので、  
 落ち着くのを待ちます。状況次第ですが数分〜数十分かかる場合があります。
@@ -150,11 +150,11 @@ https://github.com/igadaruma/study-scala
 ※下図で表示されている"Scalaっと"から始まる文章は書きかけ内容になっているので、  
 実際は別の内容が表示されていると思います。
 
-![clone8.png](image/clone8.png)
+![clone8.png](image/win/clone8.png)
 
 以下が落ち着いた状態です。
 
-![clone9.png](image/clone9.png)
+![clone9.png](image/win/clone9.png)
 
 ### 2-2. IntelliJのsbt shellからプログラムを起動
 
@@ -163,15 +163,15 @@ https://github.com/igadaruma/study-scala
 暫く(初回は数分かかるかもしれません)待って、以下のような表示になれば文字入力ができるので、  
 `run`と入力してEnterキーを押します。
 
-![run1.png](image/run1.png)
+![run1.png](image/win/run1.png)
 
-さらにまた暫く待つと以下のような始まった感のあるメッセージが出れば起動完了です。
+さらにまた暫く待ち、以下のような始まった感のあるメッセージが出れば起動完了です。
 
-![run2.png](image/run2.png)
+![run2.png](image/win/run2.png)
 
 途中、もし以下が表示されたら`アクセスを許可する`を選択します。
 
-![run3.png](image/run3.png)
+![run3.png](image/win/run3.png)
 
 そのままIntelliJは放置し、以下のリンクをクリックします。  
 起動したプログラムにアクセスすることができます。  
@@ -179,16 +179,16 @@ https://github.com/igadaruma/study-scala
 初回アクセス時はちょっと(3分以内だとは思います)時間がかかるので焦らず待ちます。  
 (ちなみに`localhost`というのは`自分のパソコン`みたいな意味です。)
 
-![run4.png](image/run4.png)
+![run4.png](image/win/run4.png)
 
 では使ってみましょう。  
 両方のテキストボックスに以下のように好きな数字を入れて`計算`をクリックします。
 
-![run5.png](image/run5.png)
+![run5.png](image/win/run5.png)
 
 入力された数字が計算されていることが確認できれば成功です！
 
-![run6.png](image/run6.png)
+![run6.png](image/win/run6.png)
 
 ## 3. はじめてのプログラミング
 
@@ -197,7 +197,8 @@ https://github.com/igadaruma/study-scala
 
 ### 3-1. 引き算に変えてみる
 
-足し算プログラムだったのを引き算プログラムに変えてみましょう。
+足し算プログラムだったのを引き算プログラムに変えてみましょう。  
+IntelliJの画面に戻って作業していきます。
 
 `app/controllers/SampleController.scala`の30行目付近の以下を修正します(後に画像があります)。
 
@@ -220,7 +221,7 @@ val answer = leftAsNumber - rightAsNumber
 
 手順を画像で見るとこんな感じ。
 
-![fix1.png](image/fix1.png)
+![fix1.png](image/win/fix1.png)
 
 次に`my-first-play/app/views/index.scala.html`の15行目を修正します(後に画像があります)。
 
@@ -248,7 +249,7 @@ val answer = leftAsNumber - rightAsNumber
 
 画像で見るとこんな感じ。
 
-![fix2.png](image/fix2.png)
+![fix2.png](image/win/fix2.png)
 
 ### 3-2. 動作確認
 
@@ -258,9 +259,9 @@ val answer = leftAsNumber - rightAsNumber
 画面が微妙に変わっていると思うので、  
 先程と同様に操作するとこんな感じ。引き算になりました。
 
-![fix3.png](image/fix3.png)
+![fix3.png](image/win/fix3.png)
 
-![fix4.png](image/fix4.png)
+![fix4.png](image/win/fix4.png)
 
 ## まとめ
 
