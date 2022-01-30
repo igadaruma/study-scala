@@ -1,0 +1,77 @@
+<!-- タグの一部の紹介です。 -->
+<!-- 他にもたくさんありますが、正直使わないぞというのも結構あるので覚えなくてOKです。 -->
+
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ページのタイトル</title>
+    <!-- styleタグの中身にはCSSという言語を記述します。いつかまたきっと・・。 -->
+    <style>
+        table, th, td {
+            border-collapse: collapse;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 見出し系タグ -->
+<h1>見出し1</h1>
+<h2>見出し2</h2>
+<h3>見出し3</h3>
+
+<!-- テーブル系タグ -->
+<table>
+    <!-- trタグが行 -->
+    <tr>
+        <!-- thがヘッダ項目 -->
+        <th>列1</th>
+        <th>列2</th>
+    </tr>
+    <tr>
+        <!-- tdが項目 -->
+        <td>1</td>
+        <td>2</td>
+    </tr>
+</table>
+
+<!-- リスト系タグ -->
+<ui>
+    <li>あ</li>
+    <li>い</li>
+    <li>う</li>
+</ui>
+
+<!-- リンクタグ -->
+<a href="7.html">リンク</a>
+
+<!-- フォーム系タグ -->
+<form>
+    <!-- テキストエリア系タグ -->
+    <input type="text" name="text"><br>
+    <input type="number" name="number"><br>
+
+    <!-- セレクトボックス系タグ -->
+    <select name="select">
+        <option>1</option>
+        <option>2</option>
+    </select>
+    <br>
+
+    <!-- ラジオボタンタグ -->
+    <input type="radio" name="radio" id="ra"><label for="ra">RA</label><br>
+    <input type="radio" name="radio" id="rb"><label for="rb">RB</label><br>
+
+    <!-- チェックボックスタグ -->
+    <input type="checkbox" id="ca" name="check"><label for="ca">CA</label><br>
+    <input type="checkbox" id="cb" name="check"><label for="cb">CB</label><br>
+
+    <!-- 送信ボタンタグ -->
+    <input type="submit" value="送信">
+</form>
+
+</body>
+</html>
+
+

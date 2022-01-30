@@ -1,11 +1,11 @@
-package controllers
+package controllers.chapter1
 
 import play.api.mvc._
 
 import javax.inject._
 
 @Singleton
-class SampleController @Inject()(val controllerComponents: ControllerComponents) extends BaseController {
+class Chapter1Controller @Inject()(val controllerComponents: ControllerComponents) extends BaseController {
 
   def index() = Action { implicit request: Request[AnyContent] =>
     // <- この記号2つより右の文字は"コメント"と呼ばれ、プログラムからは無視されます。

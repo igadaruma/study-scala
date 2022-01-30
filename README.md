@@ -16,8 +16,8 @@ Scala言語でみんなでプログラミングに入門しちゃおうってプ
 ## 使い方
 
 * Chapter.1でプログラミング体験をしちゃいます。
-  * Macをお使いの場合 -> [こちらをクリック](doc/mac.md)。
-  * Windowsをお使いの場合 -> [こちらをクリック](doc/win.md)。 
+  * Macをお使いの場合 -> [こちらをクリック](doc/chapter1/chapter1-mac.md)。
+  * Windowsをお使いの場合 -> [こちらをクリック](doc/chapter1/chapter1-win.md)。 
   
 * Chapter.2
   * 準備中です。

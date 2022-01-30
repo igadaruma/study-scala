@@ -1,4 +1,4 @@
-# Chapter1. Scalaによるプログラミング👩‍💻入門(Mac版) 
+# Chapter1. プログラミング👩‍💻体験(Mac版) 
 
 Chapter1では、プログラミングのなんちゃって体験をするの巻です。  
 何をやっているかわからないことだらけの内容にはなってしまうと思いますが、  
@@ -265,7 +265,7 @@ https://github.com/igadaruma/study-scala
 足し算プログラムだったのを引き算プログラムに変えてみましょう。  
 IntelliJの画面に戻って作業していきます。
 
-`app/controllers/SampleController.scala`の30行目付近の以下を修正します(後に画像があります)。
+`app/controllers/chapter1/Chapter1Controller.scala`の30行目付近の以下を修正します(後に画像があります)。
 
 ```
 // 足し算しています。
