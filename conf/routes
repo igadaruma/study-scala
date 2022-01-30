@@ -1,3 +1,3 @@
 # URLに対する処理(メソッド)の割当を行っている設定ファイルです。
-GET         /        controllers.SampleController.index()
-POST        /        controllers.SampleController.index()
+GET         /        controllers.chapter1.Chapter1Controller.index()
+POST        /        controllers.chapter1.Chapter1Controller.index()
