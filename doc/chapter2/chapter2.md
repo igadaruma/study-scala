@@ -97,10 +97,38 @@ https://github.com/igadaruma/study-scala
 
 ### 手順1 IntelliJでHTMLを開く
 
+Chapter1からすぐに来られた方は既にIntelliJが開いているかもしれません。  
+もし閉じてしまっている方は再度IntelliJを開いてくださいませ。  
 
+* windowsの方はデスクトップのIntelliJのアイコンをダブルクリックして起動。
+* macの方は`⌘ + Space`でSpotlight起動からの`in`と入力して起動。
+
+開いた際に、以下のような画面になった方は`study-scala`をクリックしてください。
+
+![idea1.png](image/idea1.png)
+
+後は`doc/chapter2/html`の中にあるファイルを順番にダブルクリックで開いてください。
+
+![idea2.png](image/idea2.png)
 
 ### 手順2 ブラウザでHTMLを開く
 
+winの方は以下の操作を。
+
+![idea3-win.png](image/idea3-win.png)
+
+macの方は以下の操作を。
+
+![idea3-mac.png](image/idea3-mac.png)
+
+`1.html`の場合は以下のように表示されると思います。
+
+![html1.png](image/html1.png)
 
 ### (手順3 ちょっといじってみる) 
 
+もし余裕があればIntelliJの方で中身の文字を書き換えて、  
+ブラウザで開き直し、どう変わったかを見てみちゃったりするとグレートです。
+
+しつこいですが、この流れで、
+`1.html`から`7.html`までをIntelliJとブラウザの両方で比較しつつ見てほしいです。
