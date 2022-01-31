@@ -15,7 +15,7 @@ class Chapter2_0Controller @Inject()(val controllerComponents: ControllerCompone
     // 色々説明を記載させていただきます。
     
     // まずここでは、意味不明だと思いますが、
-    // 以下のような`Ok()`というプログラムで、
+    // 以下のような`Ok("HTML").as(HTML)`というプログラムで、
     // ブラウザにHTMLが返って画面に表示されるんだということをご納得くださいませ。約束だぞ🥺
     
     Ok("ここにはHTMLを書きます。").as(HTML)
