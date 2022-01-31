@@ -8,6 +8,8 @@ import javax.inject._
 class Chapter2_0Controller @Inject()(val controllerComponents: ControllerComponents) extends BaseController {
 
   def chapter2_0 = Action { _ =>
+    // 0. コメントとHTML
+    
     // <- この記号から始まる行はコメントといって、
     // プログラムの処理にはなんの影響も及ぼさない領域として扱われます。
     // 好き放題、落書きできるわけです。
@@ -21,7 +23,7 @@ class Chapter2_0Controller @Inject()(val controllerComponents: ControllerCompone
     // 色々コメントにて説明を記載させていただきます。
     
     // また、10行目の`def`からスタートする行の最後の方で`{`がありますが、
-    // これと34行目の`}`が対応しています。
+    // これと36行目の`}`が対応しています。
     // Chapter2の内容は、こんな感じで1セットとなっております。
     // 次のファイル以降は、このセットが連続して複数並んでいますので、
     // 順番に上から参照くださいませ。
