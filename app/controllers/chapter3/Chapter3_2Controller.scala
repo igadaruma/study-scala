@@ -12,14 +12,15 @@ class Chapter3_2Controller @Inject()(val controllerComponents: ControllerCompone
     // 2-1. 初めての型
 
     // 全てのデータ(値)には"型"というのが存在しています。
-    // 型というのは、とりあえず今は、データの形みたいなものと捉えてみましょう。
+    // 型というのは、とりあえず今は、データの形みたいなものと捉えてみてください。
 
-    // 変数名等の右に`: 型名`という形で"型"を明示できます。型アノテーションって言うんだって。
+    // 変数名等の右に`: 型名`という形で"型"を明示できます。
+    // これは型アノテーションって言うんだってばよ。
     // 文字列は実はString型なので、以下のような表記ができます。
     val message: String = "こんちゃーす"
     Ok(message).as(HTML)
 
-    // 「は？」「で？」と思うかもしれませんが、 
+    // 「で？」と思うかもしれませんが、 
     // 気にせず次にいきましょう。
   }
 
@@ -28,7 +29,7 @@ class Chapter3_2Controller @Inject()(val controllerComponents: ControllerCompone
     // 2-2. 演算子とString型の足し算
 
     val message1: String = "はい。" // String(文字列)型
-    val message2 = "みなさん、こんばんは。" // String(文字列)型 (型アノテーションがなくても型がなくなることはあーりません。)
+    val message2 = "みなさん、こんばんは。" // String(文字列)型 (型アノテーションがなくても型がなくなることは、あーりません。)
 
     // String型とString型は足し算(?)できます。
     // 以下は、変数message1と変数message2を足し算したものを変数messageに入れてます。
@@ -38,7 +39,7 @@ class Chapter3_2Controller @Inject()(val controllerComponents: ControllerCompone
     Ok(message).as(HTML) // "はい。みなさん、こんばんは。"
 
     // 今回`+`記号が出てきましたが、
-    // こんな感じで、計算を行うための記号等を"演算子"と呼んだりします。
+    // こんな感じで、計算を行うための記号類を"演算子"と呼んだりします。
     // ちなみに変数に値を入れている`=`も代入演算子と呼ばれるような演算子の一種です。
     // (※今まで隠していましたが変数に値を入れることを"代入"といったりします。ひみつやで🤫)
   }
@@ -70,7 +71,7 @@ class Chapter3_2Controller @Inject()(val controllerComponents: ControllerCompone
     // IntをStringに変換することでエラーを回避できます。
     Ok(integer.toString).as(HTML) // `.toString`をつけるとString型に転生できます。
 
-    // この型による制約がミソです。今は、ふーん。でOKです。
+    // この型による制約がミソです。今は、ミソ？ふーん。でOKです。
   }
 
   def step2_4 = Action { _ =>
@@ -146,6 +147,7 @@ class Chapter3_2Controller @Inject()(val controllerComponents: ControllerCompone
     // さらに`${}`という記法を利用できます。
     // この中では式を記述できまして、その計算結果が文字列リテラルに埋め込まれます。
     val sString = s"1 + 1 = ${1 + 1}" // "1 + 1 = 2"
+    
     // 上では`${}`の中がInt型になっていますが、
     // 任意の型で`.toString`をs補完子さんがこっそり補完してくれています。
 
@@ -164,10 +166,12 @@ class Chapter3_2Controller @Inject()(val controllerComponents: ControllerCompone
     val tripleString2 =
     """2重引用符(")が文字として使えます！
 改行もできちゃいます。"""
+
     // と、そんな悩めるあなたには以下の書き方をどうぞ。
     val tripleString3 =
       """2重引用符(")が文字として使えます！
         |改行もできちゃいます。""".stripMargin
+        
     // `|`という記号を2行目以降の行頭につけて、
     // 最後に`.stripMargin`をつけると、`|`とそれまでの半角スペースが消え去った文字列を取得できます。やったZE🌟
 
@@ -175,6 +179,7 @@ class Chapter3_2Controller @Inject()(val controllerComponents: ControllerCompone
     // いつもの`"`だけで③と同じ内容を記述することもできるんやで。
     // そのためには、以下のようにmacだとバックスラッシュ・windowsだと円マーク(¥)+記号という表記を使います。
     val normalString = "2重引用符(\")が文字として使えます！\n改行もできちゃいます。"
+    
     // こういった表記をエスケープシーケンスと言って、
     // 組み合わせる記号によって、いろんな特殊な文字を表現できます。
     // 他にもたくさんありますが、必要に応じて小出ししていきたいと思います。
@@ -196,8 +201,9 @@ class Chapter3_2Controller @Inject()(val controllerComponents: ControllerCompone
 
     // Scalaの基本型(言語に元から存在する型で最も基本的なもの)の一部を紹介しちゃいます。
     // 基本型以外にも、元から存在する型という意味では、もっと大量にあります。
-    // それら全部はとても覚えられないので必要に応じて都度都度、勉強します。
-    // 以下の基本型についても、おそらくBoolean, Int(Long), Double, String以外はそれほど使わないで済むことが多いと思います。
+    // それら全部はとても覚えられないので必要に応じて都度都度、勉強すればOKです。
+    // ちなみに以下の基本型についても、
+    // おそらくBoolean, Int(Long), Double, String以外はそれほど使わないで済むことが多いと思います。
 
     // 論理系
     val boolean: Boolean = true // 論理型です。trueかfalseしか値を持ちません。ブーリアンとよみます。

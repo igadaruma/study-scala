@@ -83,7 +83,7 @@ class Chapter3_6Controller @Inject()(val controllerComponents: ControllerCompone
     // 人の感覚に近い、表現でプログラムが書くことができることが、
     // 多少は伝わりましたでしょうか？
 
-    // ただ、クラスはただ型を組合るだけのものでは全くなく、
+    // ただ、クラスはただ複数の型を組合わせるだけのものでは全くなく、
     // もっとたくさんできることがあるので、
     // 次回以降で、もう少しクラスを掘り下げて行きたいと思います。
 
@@ -192,7 +192,7 @@ class Chapter3_6Controller @Inject()(val controllerComponents: ControllerCompone
       }
 
       // 前々回の`exchange500For100`の定義は以下です。
-      // 引数と`coins.`部分が上記ではなくなっています。
+      // 引数と`coins.`部分が上記では無くなっています。
 
       // def exchange500For100(coins: Coins): Coins = {
       //   val exchanged100coins = coins.fiveHundred * 5
@@ -286,11 +286,11 @@ class Chapter3_6Controller @Inject()(val controllerComponents: ControllerCompone
     val coins2 = new Coins(1, 2, 3, 4, 5, 6)
 
     // val addedCoins = coins1.+(coins2)
-    // 本来、上記のように書きますが、引数が1つだけの場合は以下のように書けるという特殊ルールがScalaにはあります。
+    // 本来、上記のように書きますが、メソッド引数が1つだけの場合は以下のように書けるという特殊ルールがScalaにはあります。
     val addedCoins = coins1 + coins2
     val subtractedCoins = coins1 - coins2
 
-    // すこーしだけHTMLにも色気を出しています。
+    // そして今回はすこーしだけHTMLにも色気を出しています。
     Ok(
       s"""
          |<h2>addedCoins</h2>
@@ -417,10 +417,10 @@ class Chapter3_6Controller @Inject()(val controllerComponents: ControllerCompone
     // 実際の利用シーンがイメージできないとは思うのですが、
     // とりあえず雰囲気だけをまずは把握いただけると幸いです。
 
-    // ・あるクラスがあり、
+    // ・”あるクラス”があり、
     // ・そのクラスを直接利用することは無く(または他のプログラマにさせたくなく)、
-    // ・継承をさせた子クラスをインスタンス化して間接的に利用する(またはしてほしい)、
-    // ということがしたい場面で、"あるクラス"部分を抽象クラスにすると都合が良いものになっています。
+    // ・”あるクラス”を継承をさせた子クラスをインスタンス化して間接的に利用する(またはしてほしい)、
+    // という場面で、"あるクラス"部分を抽象クラスにすると都合が良くなります。
 
     // 例として、前回のBirdクラスはそのまま使いたくないんだよな、
     // という状況だったとして、Birdクラスを抽象クラスに変更してみます。
@@ -448,18 +448,19 @@ class Chapter3_6Controller @Inject()(val controllerComponents: ControllerCompone
     // 子のぺんぎんクラス。
     class Penguin() extends Bird {
       // 親が持つ"抽象"メンバ(フィールド・メソッド)は、
-      // 必ず子クラスで定義(実装)する必要があります。
+      // 子クラスでは必ず定義(実装)する必要があります。
       val chirping: String = "ぶるぁぁぁぁ！"
+      // ※例外として子クラスも抽象クラスなら話は別です。
 
       def fly(): String = "無理だよ"
 
       // 前回はしていませんでしたが、
       // 追加のフィールドやメソッドを追加することも可能です。
-      // ※抽象クラス関係なしに可能です。
       def swim(): String = "すいすーい"
+      // ※これは抽象クラス関係なしに可能です。
     }
 
-    // 前回上書きの場合は、`override`というのがついていましたが、無くなっています。
+    // 前回上書きの場合は、`override`というのがついていましたが、今回は無くなっています。
     // 実は付けても問題ないのですが、上書きする対象が抽象メンバであった場合は、
     // `override`を省略してもいいということになっています。
 
@@ -467,9 +468,8 @@ class Chapter3_6Controller @Inject()(val controllerComponents: ControllerCompone
     // 親クラス・・・は抽象クラスなので以下のように書くとエラーになります！
     // val bird = new Bird // NG
 
-    // 子クラス(ぺんぎん)は抽象クラスではないので、
-    // (抽象クラスの対義語として具象クラスがありますが聞くのも言うのも機会が少ない印象です。)
-    // 今まで通りnewできます。
+    // 子クラス(ぺんぎん)は抽象クラスではないので、今まで通りnewできます。
+    // (抽象クラスの対義語として具象クラスがありますが、聞くのも言うのも機会が少ない印象です。)
     val penguin = new Penguin
     val penguinSong = penguin.song()
     val penguinFly = penguin.fly()
@@ -579,7 +579,7 @@ class Chapter3_6Controller @Inject()(val controllerComponents: ControllerCompone
     // 6-9. Any型・Object型
 
     // 今回は番外編です。
-    // よくわからんぞ？となった場合でも気にせず次に進んで問題ないです。
+    // よくわからんぞ？となった場合でも気にせず次に進んで問題ない内容です。
 
     // まずはAny型って何？という話です。
     // おそらく、もう忘れちゃっていることと思いますが、

@@ -13,8 +13,8 @@ class Chapter3_7Controller @Inject()(val controllerComponents: ControllerCompone
 
     // 今回は、Scalaプログラミングにおいて、
     // とても重要なOption型に入門していきます。
-    // 初めはちょっと難しく感じると思いますが、
-    // 慣れれば簡単なので頑張っていきましょう。
+    // 初めはなかなか難しく感じると思いますが、
+    // 慣れてさえしまえば簡単なので頑張りましょう・・！
 
     // まずは、型構造を解説します。
     // Option型といいつつ、登場する型が3+1個あります。
@@ -40,10 +40,10 @@ class Chapter3_7Controller @Inject()(val controllerComponents: ControllerCompone
     val emptyNums: List[Int] = List() // 空です。
 
     // 次に、これらのリストの先頭の値を取得したかったとします。
-    // nonEmptyNums(0) // `nonEmptyNums.head`というメソッドでも同じことができます。
-    // emptyNums(0) // `emptyNums.head`というメソッドでも同じことができます。
+    // nonEmptyNums(0)    // `nonEmptyNums.head`というのも同義です。
+    // emptyNums(0)    // `emptyNums.head`というのも同義です。
     // とかけば目的が達成できそうではあるのですが、
-    // emptyNumsは空なので、実行時にエラーが発生してしまいます。
+    // emptyNumsは空なので、実行時にエラーが発生してしまいます💣🔥
     // より安全な実装をするための方法の1つとしてOption型を利用できます。
     // List型を受け取って先頭の値があればそれを返却するOption型を利用した関数の例が以下です。
     def headOption(nums: List[Int]): Option[Int] = {
@@ -58,10 +58,10 @@ class Chapter3_7Controller @Inject()(val controllerComponents: ControllerCompone
     // この関数から返却される実際の値はSome型かNone型だということになります。
     // この関数では、Listが空でないときにだけ`head`メソッドを呼び出しているので、
     // 実行時にエラーになることが無い、安全な実装になっています。
-    // 実際に利用する時はmatchと組合せて以下のように使うことができます。
+    // 実際にこの関数を利用する時はmatchと組合せて以下のように使うことができます。
     val numsHead1 = headOption(nonEmptyNums)
     val numsHead1AsString = numsHead1 match {
-      // Some(変数名)をcaseに指定することでSome型だった場合に変数に中身の値を格納できます。
+      // Some(変数名)をcaseに指定することでSome型だった場合に変数(以下だとn)に中身の値を格納できます。
       case Some(n) => s"numsHead1はSomeで${n}が入っていました。"
       case None => "numsHead1はNoneでした。"
     }
@@ -75,8 +75,8 @@ class Chapter3_7Controller @Inject()(val controllerComponents: ControllerCompone
     // match式で型をチェックしている分、
     // ただただheadを呼び出すよりは複雑になりますが、
     // 実行時にエラーにならない安全な実装というのは、
-    // とてつもなく重要だと考えています。
-    // "値が有るかもしれないし無いかもしれない"という場面はよく遭遇するため、
+    // とてつもなく重要です。
+    // "値が有るかもしれないし無いかもしれない"という場面・文脈はよく遭遇するため、
     // この状況を安全に実装できるOption型は重宝されているわけです。
 
     Ok(
@@ -204,8 +204,7 @@ class Chapter3_7Controller @Inject()(val controllerComponents: ControllerCompone
     // 便利なので利用する方も多いので読み書きできるようにしておきましょう。
 
     // 前回同様にtwice高階関数に登場してもらいましょう。
-    def twice(n: Int,
-              f: Int => Int): Int = f(f(n))
+    def twice(n: Int, f: Int => Int): Int = f(f(n))
 
     // まずは最も基本的な形が以下です。 
     val r1_1 = twice(10, (n: Int) => n + 1)
@@ -231,8 +230,7 @@ class Chapter3_7Controller @Inject()(val controllerComponents: ControllerCompone
     // 次に、引数が2つだった場合も見ていきます。
     // 例として、以下のような、第1引数の値を、
     // 2つ引数を持つ第2引数の関数に受け渡した結果を返す高階関数に登場してもらいます。
-    def sameArg(n: Int,
-                f: (Int, Int) => Int): Int = f(n, n)
+    def sameArg(n: Int, f: (Int, Int) => Int): Int = f(n, n)
 
     // 同様にだんだん省略していきます。
     val r2_1 = sameArg(10, (n1: Int, n2: Int) => n1 + n2)
@@ -742,6 +740,9 @@ class Chapter3_7Controller @Inject()(val controllerComponents: ControllerCompone
          |fruitColors2 = ${fruitColors2}<br>
          |""".stripMargin).as(HTML)
 
+    
+    
+    
     // ここまで地道に来られた方。脱帽です。つたない文章にお付き合い頂き感謝でございます。
     // これでChapter3は終わりです！！
     // もしかすると、まだ理解が怪しいかもと思う部分があるかもしれませんが、

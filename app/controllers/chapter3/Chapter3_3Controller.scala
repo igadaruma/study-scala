@@ -13,16 +13,16 @@ class Chapter3_3Controller @Inject()(val controllerComponents: ControllerCompone
 
     // ここからです。
     // ここからいよいよプログラミング感がでてきます。
-    // 状況によって処理を切り替える分岐をやっていきます！
+    // 状況によって処理を切り替える`分岐`をやっていきます！
 
-    // 暫くは状況を固定した例ばかりになりますので、
-    // 決まった道にしかいきません。少々つまらないかもですが何卒です。
+    // 暫くは状況(分岐の条件となるもの)を固定した例ばかりになりますので、
+    // 決まった道にしかいかず、実感がわかず、少々つまらないかもですが何卒です。。
 
     // 今回は分岐の代表格`if`です。日本語で`もし`です。
-    // さらに`else`です。日本語で`そうでないなら・ちゃうかったら`です。
+    // さらに`else`です。日本語で`そうでないなら`。関西弁で`ちゃうかったら`です。
     // ifはいきなり書けますが、elseはifに続く形でのみ書くことができます。
     val message1 =
-      if (1 == 1) "1は1と等しいです。" // if (Boolean型) trueの時の処理
+      if (1 == 1) "1は1と等しいです。" // if (Boolean型の結果になる式) trueの時の処理
       else "1は1と等しくないです？" // else falseの時の処理
     // message1 => (1 == 1)はtrueなので、"1は1と等しいです。"が入ります。
 
@@ -113,7 +113,7 @@ class Chapter3_3Controller @Inject()(val controllerComponents: ControllerCompone
     // 【注意】
     // match式のcaseの全てに当てはまらないと・・
     // エラーが発生しちゃいます💣🔥 
-    // そんな時のために"それ以外"というのを`_`で記述できます。
+    // そんな時のために"それ以外"というのを`case _`で記述できます。
 
     val z = "Z"
     val message3 = z match {
@@ -128,7 +128,7 @@ class Chapter3_3Controller @Inject()(val controllerComponents: ControllerCompone
       case "X" => "zはXです？" // このcaseには来ません。
       case "Y" => "zはYです？" // このcaseには来ません。
       case something => s"zはXでもYでもなく${something}です。" // このcaseに来ます。
-      // ↑ 名前は自由につけられます。
+      //    ↑ 名前は自由につけられます。
     }
 
     // 【注意】
@@ -161,7 +161,8 @@ class Chapter3_3Controller @Inject()(val controllerComponents: ControllerCompone
 
     // また型です。型はすごく大事です。型の話です。
     // 分岐の際、それぞれの分岐で結果の値が存在することになります。
-    // 今までの例では、分岐しても、それぞれが同じ型になるようになっていました。ふふ。
+    // 今までの例では、分岐しても、それぞれが同じ型になるようになっていました。
+    // ふふ。
     // そうなると、その型が最終的な分岐式の型になります。
     // 何いってんの？というと、
     val message: String = // 分岐先でどっちもStringなのでmessageの型もString
@@ -181,8 +182,9 @@ class Chapter3_3Controller @Inject()(val controllerComponents: ControllerCompone
     // val answer = any + 10
     // 上記のような計算をしようとするとエラーになります・・。
     // Any型とInt型を足す方法とか知らねーよ。と怒られちゃうのです。
-    // なんで！と思うかもしれませんが。Scalaだとこうなのです。これこそ安心なのです。なぜか？それは秘密です🤫
-    // ※言語によっては計算できちゃったりします。それは怖いのです🥺
+    // なんで！と思うかもしれませんが、こういうもんなのです。
+    // むしろこれこそが型安全で安心なのです。なぜか？それは秘密です🤫
+    // ※言語によっては計算できちゃったりします。それはむしろ怖いのです🥺  ※個人の意見です。
 
     // 分岐したときは全ルートで同じ型にする！
     // というのを原則にしましょう。原則ネ。
@@ -192,11 +194,11 @@ class Chapter3_3Controller @Inject()(val controllerComponents: ControllerCompone
     // 実は前回、隠していたmatch式の、
     // さらなる力(ぱわぁ)を使えば以下のようにこの状況を解決することができます。
     val answer = any match {
-      case n: Int => // こんな感じで型アノテーションをつけてあげることで、`その型だったら`という条件がつきます。
+      case n: Int => // こんな感じでcase部分に型アノテーションをつけてあげることで、`その型だったら`という条件がつきます。
         n + 10 // ここでは、intはInt型だと判定されたcase内なので、足し算できるZO！
       case _ => 0 // Intじゃない時にエラーにならないように、型アノテーション無し版のcaseも書いておきましょう。
     }
-    // さらっと出てきましたが、
+    // さらっと出しましたが、
     // 実はすごく大事なぱわぁなので、
     // また詳しく触れます。
 
@@ -215,7 +217,7 @@ class Chapter3_3Controller @Inject()(val controllerComponents: ControllerCompone
     // match式はif式の強化版といった割に、今まで紹介した中で、
     // if式より強い力(ぱわぁ)は前回の型チェックぐらいでした。
     // そうです。まだ隠された力があります。
-    // その1つがパターンガードです。名前は覚えなくていいです。
+    // その1つがパターンガードです。この名前は別に覚えなくていいです。
     // 具体例を見ていきましょう。
     val x = 15
     val message1 = x match {
@@ -225,7 +227,7 @@ class Chapter3_3Controller @Inject()(val controllerComponents: ControllerCompone
     }
 
     // という感じです`if Boolean型の式`という感じで指定することで、
-    // Boolean型がtrueになる場合だけ。という条件が付きます。強いぞmatch式！
+    // Boolean型がtrueになる場合だけ。という条件が付きます。強いぞmatch式！偉いぞmatch式！
 
     // もちろん、今までのものと組み合わせることができます。
     val any: Any = "any" // わざとString型なのにAny型に格納。
@@ -236,7 +238,7 @@ class Chapter3_3Controller @Inject()(val controllerComponents: ControllerCompone
       case _ => "数字でも文字列でもない何かです。"
     }
 
-    // 実はさらにあるのですが・・まだです。まだ秘密です🤐
+    // 実はさらなる`ぱわぁ`もあるのですが・・まだです。まだ秘密です🤐
 
     Ok(
       s"""
@@ -314,9 +316,9 @@ class Chapter3_3Controller @Inject()(val controllerComponents: ControllerCompone
     //【補足】
     // 外側で既に宣言されている変数と同じ名前で、
     // 内側のブロックで重ねて宣言した場合は、
-    // 内側にいる間は、外側の変数が隠れたような形で、内側で宣言したものが優先されます。
+    // 内側にいる間は、外側の変数が隠れたような形で、内側で宣言したものが優先されます(シャドウィングと呼ばれる挙動です)。
     // ブロックの外に出たら、元の外側の変数が見えるようになります。
-    // ややこしいので、基本は避けるようにしたほうがいいかなと思います。
+    // ややこしいので、基本は避けるようにしたほうがいいかなと思います。※個人の意見です。
 
     // 例）
     // val x = "x"
@@ -325,7 +327,7 @@ class Chapter3_3Controller @Inject()(val controllerComponents: ControllerCompone
     //    x // このブロックが終わるまではxは"えっくす"になります。
     // }
     // // 外に出たらxは元の"x"に戻ります。innerXは"えっくす"です。
-    // ややこしネ！
+    // ややこしぃネ！
 
   }
 
