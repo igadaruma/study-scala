@@ -15,9 +15,13 @@ Scala言語でみんなでプログラミングに入門しちゃおうってプ
 
 ## 使い方
 
+基本的には以下のChapterリンクを順番に参照いただくことを想定しております。
+
 * Chapter.1でプログラミング体験をしちゃいます。
   * Mac(パソコンにリンゴマークがついているもの)をお使いの場合 -> [こちらをクリック](doc/chapter1/chapter1-mac.md)。
   * Windows(パソコンを起動時に窓みたいなロゴがでる)をお使いの場合 -> [こちらをクリック](doc/chapter1/chapter1-win.md)。 
   
-* Chapter.2
-  * 準備中です。
+* [Chapter.2](doc/chapter2/chapter2.md)ではWebアプリとHTMLの概要を把握しちゃいます。
+  * ざっくり内容です。 
+* [Chapter.3](doc/chapter3/chapter3.md)ではScalaプログラミングに入門しちゃいます。
+  * 割とマジな内容です。 

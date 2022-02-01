@@ -37,89 +37,83 @@ sbt shellを開き、`run`を実行します。
 
 ## 復旧手順
 
-ただ、もしかすると、下図のようにエラーが出てしまうケースがあるかもしれません。
+ただ、もしかすると、少し書き換えたことにより、  
+下図のようにエラーが出てしまうケースがあるかもしれません。
 
 ![scala4.png](image/scala4.png)
 
 その場合は、下図のようにメニューから、  
 Git -> Uncommitted Changes -> Rollback を選択して、
 
-・mac
-
 ![scala5.png](image/scala5.png)
 
-・win
-
-![scala5-win.png](image/scala5-win.png)
+※上図はmacですが、windowsの場合もウィンドウ上部にあるメニューから同様に操作できます。
 
 開いた下図モーダルで`Rollback`をした後に、再度ブラウザでURLを開き直してみてください。
 
 ![scala6.png](image/scala6.png)
 
 それでもうまくいかない場合は、パソコンを再起動して、  
-再チャレンジすればうまくいくかもしれません。
+再チャレンジすればうまくいくかもしれません・・！
 
 ## 学習ステップ一覧
 
 以下がソースファイルと各ステップと対応するURLになります。  
-長旅になると思います。1日1ステップとかのペースやそれ以下でも構いません。  
-じっくり読み進めてみてくださいませ。
+ずばり長旅になると思います。1日1ステップとかのペースや、それ以下でも構いません。  
+是非じっくり読み進めてみて欲しいです。
 
 |  タイトル   |  ファイル名 | サブタイトル  | 関数名(def) | URL | 
 | ---- | ---- | ---- | ---- | ---- |
-| 0. コメントとHTML | Chapter2_0Controller  |  -  | chapter2_0 | http://localhost:9000/chapter2/0
-| 1. 変数とリテラル  | Chapter2_1Controller |  1-1. 初めての変数(var) | chapter2_1_1 | http://localhost:9000/chapter2/1/1 |
-| | |  1-2. 文字列リテラル | chapter2_1_2 | http://localhost:9000/chapter2/1/2 |
-| | |  1-3. 変数値の上書き | chapter2_1_3 | http://localhost:9000/chapter2/1/3 |
-| | |  1-4. 初めてのval |  chapter2_1_4 | http://localhost:9000/chapter2/1/4 |
+| 0. コメントとHTML | Chapter2_0Controller  |  -  | step2_0 | http://localhost:9000/chapter3/0
+| 1. 変数とリテラル  | Chapter2_1Controller |  1-1. 初めての変数(var) | step1_1 | http://localhost:9000/chapter3/1/1 |
+| | | 1-2. 文字列リテラル | step1_2 | http://localhost:9000/chapter3/1/2 |
+| | | 1-3. 変数値の上書き | step1_3 | http://localhost:9000/chapter3/1/3 |
+| | | 1-4. 初めてのval |  step1_4 | http://localhost:9000/chapter3/1/4 |
+| 2. 型 | Chapter2_2Controller | 2-1. 初めての型 | step2_1 | http://localhost:9000/chapter3/2/1 |
+| | | 2-2. 演算子とString型の足し算 | step2_2 | http://localhost:9000/chapter3/2/2 |
+| | | 2-3. 初めてのInt(整数)型 | step2_3 | http://localhost:9000/chapter3/2/3 |
+| | | 2-4. 初めてのDouble(小数)型 | step2_4 | http://localhost:9000/chapter3/2/4 |
+| | | 2-5. Int型とDouble型 | step2_5 | http://localhost:9000/chapter3/2/5 |
+| | | 2-6. String型とInt型 | step2_6 | http://localhost:9000/chapter3/2/6 |
+| | | 2-7. 文字列リテラルの強化版 | step2_7 | http://localhost:9000/chapter3/2/7 |
+| | | 2-8. 基本型いろいろ | step2_8 | http://localhost:9000/chapter3/2/8 |
+| | | 2-9. 演算子色々 | step2_9 | http://localhost:9000/chapter3/2/9 |
+| | | 2-10. 演算子の計算順序と括弧 | step2_10 | http://localhost:9000/chapter3/2/10 |
+| 3. 分岐 | Chapter2_3Controller | 3-1. if ~ else if ~ else | step3_1 | http://localhost:9000/chapter3/3/1 |
+| | | 3-2. 入れ子のif式 | step3_2 | http://localhost:9000/chapter3/3/2 |
+| | | 3-3. match式 | step3_3 | http://localhost:9000/chapter3/3/3 |
+| | | 3-4. 分岐と型 | step3_4 | http://localhost:9000/chapter3/3/4 |
+| | | 3-5. match式でのガーーーード(if)！ | step3_5 | http://localhost:9000/chapter3/3/5 |
+| | | 3-6. 変数の範囲(スコープ) | step3_6 | http://localhost:9000/chapter3/3/6 |
+| | | 3-7. ifとmatchの使い分け | step3_7 | http://localhost:9000/chapter3/3/7 |
+| 4. 繰り返しとコレクション | Chapter2_4Controller | 4-1. List | step4_1 | http://localhost:9000/chapter3/4/1 |
+| | | 4-2. 繰り返し処理のためのfor式 | step4_2 | http://localhost:9000/chapter3/4/2 |
+| | | 4-3. 繰り返し処理のためのfor式 強化編その1 入れ子 | step4_3 | http://localhost:9000/chapter3/4/3 |
+| | | 4-4. 繰り返し処理のためのfor式 強化編その2 条件指定 | step4_4 | http://localhost:9000/chapter3/4/4 |
+| | | 4-5. for式サヨナラ!? | step4_5 | http://localhost:9000/chapter3/4/5 |
+| 5. 関数 | Chapter2_5Controller | 5-1. 関数の無い世界 | step5_1 | http://localhost:9000/chapter3/5/1 |
+| | | 5-2. 関数のある世界 | step5_2 | http://localhost:9000/chapter3/5/2 |
+| | | 5-3. 関数の引数 | step5_3 | http://localhost:9000/chapter3/5/3 |
+| | | 5-4. 関数で複数の値を返したい？タプル型・・あるよ。 | step5_4 | http://localhost:9000/chapter3/5/4 |
+| | | 5-5. タプル型・・・だと厳しい？ | step5_5 | http://localhost:9000/chapter3/5/5 |
+| 6. クラス | Chapter2_6Controller | 6-1. クラスって？ | step6_1 | http://localhost:9000/chapter3/6/1 |
+| | | 6-2. フィールド | step6_2 | http://localhost:9000/chapter3/6/2 |
+| | | 6-3. メソッド | step6_3 | http://localhost:9000/chapter3/6/3 |
+| | | 6-4. メソッド2 | step6_4 | http://localhost:9000/chapter3/6/4 |
+| | | 6-5. 組込型の演算子とメソッド | step6_5 | http://localhost:9000/chapter3/6/5 |
+| | | 6-6. クラスの継承 | step6_6 | http://localhost:9000/chapter3/6/6 |
+| | | 6-7. 抽象クラス | step6_7 | http://localhost:9000/chapter3/6/7 |
+| | | 6-8. 型と継承と多態性 | step6_8 | http://localhost:9000/chapter3/6/8 |
+| | | 6-9. Any型・Object型 | step6_9 | http://localhost:9000/chapter3/6/9 |
+| 7. 組込クラスと高階関数とラムダ式 | Chapter2_7Controller | 7-1. Option | step7_1 | http://localhost:9000/chapter3/7/1 |
+| | | 7-2. 高階関数 | step7_2 | http://localhost:9000/chapter3/7/2 |
+| | | 7-3. ラムダ式の省略記法 | step7_3 | http://localhost:9000/chapter3/7/3 |
+| | | 7-4. Option 2 | step7_4 | http://localhost:9000/chapter3/7/4 |
+| | | 7-5. List 2 | step7_5 | http://localhost:9000/chapter3/7/5 |
+| | | 7-6. Map | step7_6 | http://localhost:9000/chapter3/7/6 |
 
-以降TODO
+## まとめ
 
-* Chapter2_2Controller
-  * chapter2_2_1
-  * chapter2_2_2
-  * chapter2_2_3
-  * chapter2_2_4
-  * chapter2_2_5
-  * chapter2_2_6
-  * chapter2_2_7
-  * chapter2_2_8
-  * chapter2_2_9
-  * chapter2_2_10  
-* Chapter2_3Controller
-  * chapter2_3_1
-  * chapter2_3_2
-  * chapter2_3_3
-  * chapter2_3_4
-  * chapter2_3_5
-  * chapter2_3_6
-  * chapter2_3_7
-* Chapter2_4Controller
-  * chapter2_4_1
-  * chapter2_4_2
-  * chapter2_4_3
-  * chapter2_4_4
-  * chapter2_4_5 
-* Chapter2_5Controller
-  * chapter2_5_1
-  * chapter2_5_2
-  * chapter2_5_3
-  * chapter2_5_4
-  * chapter2_5_5
-* Chapter2_6Controller
-  * chapter2_6_1
-  * chapter2_6_2
-  * chapter2_6_3
-  * chapter2_6_4
-  * chapter2_6_5
-  * chapter2_6_6
-  * chapter2_6_7
-  * chapter2_6_8
-  * chapter2_6_9
-* Chapter2_7Controller
-  * chapter2_7_1
-  * chapter2_7_2
-  * chapter2_7_3
-  * chapter2_7_4
-  * chapter2_7_5
-  * chapter2_7_6 
+Scala完全に理解した！
+もっとだ！もっと力を！という方は、  
+Chapter4の完成をお待ち下さい・・・。  

@@ -333,8 +333,7 @@ val answer = leftAsNumber - rightAsNumber
 プログラミング完全に理解した！  
 プログラミング完全に理解した！
 
-完全に理解したけど物足りないという方は、   
-[Topページ](https://github.com/igadaruma/study-scala) に戻りChapter2に進行を。
+完全に理解したけど物足りないという方は[Chapter2](../chapter2/chapter2.md)に進行を。
 
 ## 参考文献
 

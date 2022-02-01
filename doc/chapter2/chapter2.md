@@ -158,6 +158,5 @@ Webアプリが行う仕事は本当に多岐にわたりますが、
 Webアプリ完全に理解した！  
 HTML完全に理解した！
 
-まだだ！まだ足りぬ！という方は、   
-[Topページ](https://github.com/igadaruma/study-scala) に戻りChapter3に進行を。  
+まだだ！まだ足りぬ！という方は[Chapter3](../chapter3/chapter3.md)に進行を。  
 いよいよ本格的にプログラミングを学習する段階になります。
