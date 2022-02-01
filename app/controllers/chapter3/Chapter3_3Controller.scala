@@ -1,13 +1,13 @@
-package controllers.chapter2
+package controllers.chapter3
 
 import play.api.mvc._
 
 import javax.inject._
 
 @Singleton
-class Chapter2_3Controller @Inject()(val controllerComponents: ControllerComponents) extends BaseController {
+class Chapter3_3Controller @Inject()(val controllerComponents: ControllerComponents) extends BaseController {
 
-  def chapter2_3_1 = Action { _ =>
+  def step3_1 = Action { _ =>
     // 3. 分岐
     // 3-1. if ~ else if ~ else
 
@@ -53,7 +53,7 @@ class Chapter2_3Controller @Inject()(val controllerComponents: ControllerCompone
          |""".stripMargin).as(HTML)
   }
 
-  def chapter2_3_2 = Action { _ =>
+  def step3_2 = Action { _ =>
     // 3. 分岐
     // 3-2. 入れ子のif式
 
@@ -83,7 +83,7 @@ class Chapter2_3Controller @Inject()(val controllerComponents: ControllerCompone
          |""".stripMargin).as(HTML)
   }
 
-  def chapter2_3_3 = Action { _ =>
+  def step3_3 = Action { _ =>
     // 3. 分岐
     // 3-3. match式
 
@@ -155,7 +155,7 @@ class Chapter2_3Controller @Inject()(val controllerComponents: ControllerCompone
 
   }
 
-  def chapter2_3_4 = Action { _ =>
+  def step3_4 = Action { _ =>
     // 3. 分岐
     // 3-4. 分岐と型
 
@@ -208,7 +208,7 @@ class Chapter2_3Controller @Inject()(val controllerComponents: ControllerCompone
          |""".stripMargin).as(HTML)
   }
 
-  def chapter2_3_5 = Action { _ =>
+  def step3_5 = Action { _ =>
     // 3. 分岐
     // 3-5. match式でのガーーーード(if)！
 
@@ -245,7 +245,7 @@ class Chapter2_3Controller @Inject()(val controllerComponents: ControllerCompone
          |""".stripMargin).as(HTML)
   }
 
-  def chapter2_3_6 = Action { _ =>
+  def step3_6 = Action { _ =>
     // 3. 分岐
     // 3-6. 変数の範囲(スコープ)
 
@@ -329,7 +329,7 @@ class Chapter2_3Controller @Inject()(val controllerComponents: ControllerCompone
 
   }
 
-  def chapter2_3_7 = Action { _ =>
+  def step3_7 = Action { _ =>
     // 3. 分岐
     // 3-7. ifとmatchの使い分け
 

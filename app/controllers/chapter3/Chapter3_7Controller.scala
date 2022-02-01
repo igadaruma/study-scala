@@ -1,13 +1,13 @@
-package controllers.chapter2
+package controllers.chapter3
 
 import play.api.mvc._
 
 import javax.inject._
 
 @Singleton
-class Chapter2_7Controller @Inject()(val controllerComponents: ControllerComponents) extends BaseController {
+class Chapter3_7Controller @Inject()(val controllerComponents: ControllerComponents) extends BaseController {
 
-  def chapter2_7_1 = Action { _ =>
+  def step7_1 = Action { _ =>
     // 7. 組込クラスと高階関数とラムダ式
     // 7-1. Option
 
@@ -95,7 +95,7 @@ class Chapter2_7Controller @Inject()(val controllerComponents: ControllerCompone
     // 任意の型を含むListで利用できます。
   }
 
-  def chapter2_7_2 = Action { _ =>
+  def step7_2 = Action { _ =>
     // 7. 組込クラスと高階関数とラムダ式
     // 7-2. 高階関数
 
@@ -195,7 +195,7 @@ class Chapter2_7Controller @Inject()(val controllerComponents: ControllerCompone
     // 【補足事項② ここまで】
   }
 
-  def chapter2_7_3 = Action { _ =>
+  def step7_3 = Action { _ =>
     // 7. 組込クラスと高階関数とラムダ式
     // 7-3. ラムダ式の省略記法
 
@@ -259,7 +259,7 @@ class Chapter2_7Controller @Inject()(val controllerComponents: ControllerCompone
 
   }
 
-  def chapter2_7_4 = Action { _ =>
+  def step7_4 = Action { _ =>
     // 7. 組込クラスと高階関数とラムダ式
     // 7-4. Option 2
 
@@ -416,7 +416,7 @@ class Chapter2_7Controller @Inject()(val controllerComponents: ControllerCompone
 
   }
 
-  def chapter2_7_5 = Action { _ =>
+  def step7_5 = Action { _ =>
     // 7. 組込クラスと高階関数とラムダ式
     // 7-5. List 2
 
@@ -641,7 +641,7 @@ class Chapter2_7Controller @Inject()(val controllerComponents: ControllerCompone
 
   }
 
-  def chapter2_7_6 = Action { _ =>
+  def step7_6 = Action { _ =>
     // 7. 組込クラスと高階関数とラムダ式
     // 7-6. Map
 

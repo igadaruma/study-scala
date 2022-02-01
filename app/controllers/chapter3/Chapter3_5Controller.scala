@@ -1,13 +1,13 @@
-package controllers.chapter2
+package controllers.chapter3
 
 import play.api.mvc._
 
 import javax.inject._
 
 @Singleton
-class Chapter2_5Controller @Inject()(val controllerComponents: ControllerComponents) extends BaseController {
+class Chapter3_5Controller @Inject()(val controllerComponents: ControllerComponents) extends BaseController {
 
-  def chapter2_5_1 = Action { _ =>
+  def step5_1 = Action { _ =>
     // 5. 関数
     // 5-1. 関数の無い世界
 
@@ -73,7 +73,7 @@ class Chapter2_5Controller @Inject()(val controllerComponents: ControllerCompone
     Ok("関数最高！").as(HTML)
   }
 
-  def chapter2_5_2 = Action { _ =>
+  def step5_2 = Action { _ =>
     // 5. 関数
     // 5-2. 関数のある世界
 
@@ -145,7 +145,7 @@ class Chapter2_5Controller @Inject()(val controllerComponents: ControllerCompone
     Ok("関数最高！！").as(HTML)
   }
 
-  def chapter2_5_3 = Action { _ =>
+  def step5_3 = Action { _ =>
     // 5. 関数
     // 5-3. 関数の引数
 
@@ -198,7 +198,7 @@ class Chapter2_5Controller @Inject()(val controllerComponents: ControllerCompone
 
   }
 
-  def chapter2_5_4 = Action { _ =>
+  def step5_4 = Action { _ =>
     // 5. 関数
     // 5-4. 関数で複数の値を返したい？タプル型・・あるよ。
 
@@ -281,7 +281,7 @@ class Chapter2_5Controller @Inject()(val controllerComponents: ControllerCompone
     // 近い将来にはご理解いただけるようになっているはずです。
   }
 
-  def chapter2_5_5 = Action { _ =>
+  def step5_5 = Action { _ =>
     // 5. 関数
     // 5-5. タプル型・・・だと厳しい？
 

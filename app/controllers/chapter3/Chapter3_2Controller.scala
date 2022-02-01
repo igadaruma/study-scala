@@ -1,13 +1,13 @@
-package controllers.chapter2
+package controllers.chapter3
 
 import play.api.mvc._
 
 import javax.inject._
 
 @Singleton
-class Chapter2_2Controller @Inject()(val controllerComponents: ControllerComponents) extends BaseController {
+class Chapter3_2Controller @Inject()(val controllerComponents: ControllerComponents) extends BaseController {
 
-  def chapter2_2_1 = Action { _ =>
+  def step2_1 = Action { _ =>
     // 2. 型
     // 2-1. 初めての型
 
@@ -23,7 +23,7 @@ class Chapter2_2Controller @Inject()(val controllerComponents: ControllerCompone
     // 気にせず次にいきましょう。
   }
 
-  def chapter2_2_2 = Action { _ =>
+  def step2_2 = Action { _ =>
     // 2. 型
     // 2-2. 演算子とString型の足し算
 
@@ -43,7 +43,7 @@ class Chapter2_2Controller @Inject()(val controllerComponents: ControllerCompone
     // (※今まで隠していましたが変数に値を入れることを"代入"といったりします。ひみつやで🤫)
   }
 
-  def chapter2_2_3 = Action { _ =>
+  def step2_3 = Action { _ =>
     // 2. 型
     // 2-3. 初めてのInt(整数)型
 
@@ -73,7 +73,7 @@ class Chapter2_2Controller @Inject()(val controllerComponents: ControllerCompone
     // この型による制約がミソです。今は、ふーん。でOKです。
   }
 
-  def chapter2_2_4 = Action { _ =>
+  def step2_4 = Action { _ =>
     // 2. 型
     // 2-4. 初めてのDouble(小数)型
 
@@ -87,7 +87,7 @@ class Chapter2_2Controller @Inject()(val controllerComponents: ControllerCompone
     Ok(double.toString).as(HTML) // Double型も`.toString`でString型に変身できます。
   }
 
-  def chapter2_2_5 = Action { _ =>
+  def step2_5 = Action { _ =>
     // 2. 型
     // 2-5. Int型とDouble型
 
@@ -105,7 +105,7 @@ class Chapter2_2Controller @Inject()(val controllerComponents: ControllerCompone
     // 他のプログラミング言語で同じ挙動になるとは限らないです。
   }
 
-  def chapter2_2_6 = Action { _ =>
+  def step2_6 = Action { _ =>
     // 2. 型
     // 2-6. String型とInt型
 
@@ -133,7 +133,7 @@ class Chapter2_2Controller @Inject()(val controllerComponents: ControllerCompone
 
   }
 
-  def chapter2_2_7 = Action { _ =>
+  def step2_7 = Action { _ =>
     // 2. 型
     // 2-7. 文字列リテラルの強化版
 
@@ -190,7 +190,7 @@ class Chapter2_2Controller @Inject()(val controllerComponents: ControllerCompone
 
   }
 
-  def chapter2_2_8 = Action { _ =>
+  def step2_8 = Action { _ =>
     // 2. 型
     // 2-8. 基本型いろいろ
 
@@ -235,7 +235,7 @@ class Chapter2_2Controller @Inject()(val controllerComponents: ControllerCompone
 
   }
 
-  def chapter2_2_9 = Action { _ =>
+  def step2_9 = Action { _ =>
     // 2. 型
     // 2-9. 演算子色々
 
@@ -296,7 +296,7 @@ class Chapter2_2Controller @Inject()(val controllerComponents: ControllerCompone
     Ok("他にも計算はたくさんありますがJOJOにネ！").as(HTML)
   }
 
-  def chapter2_2_10 = Action { _ =>
+  def step2_10 = Action { _ =>
     // 2. 型
     // 2-10. 演算子の計算順序と括弧
 

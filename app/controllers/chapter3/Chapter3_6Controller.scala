@@ -1,13 +1,13 @@
-package controllers.chapter2
+package controllers.chapter3
 
 import play.api.mvc._
 
 import javax.inject._
 
 @Singleton
-class Chapter2_6Controller @Inject()(val controllerComponents: ControllerComponents) extends BaseController {
+class Chapter3_6Controller @Inject()(val controllerComponents: ControllerComponents) extends BaseController {
 
-  def chapter2_6_1 = Action { _ =>
+  def step6_1 = Action { _ =>
     // 6. クラス
     // 6-1. クラスって？
 
@@ -91,7 +91,7 @@ class Chapter2_6Controller @Inject()(val controllerComponents: ControllerCompone
 
   }
 
-  def chapter2_6_2 = Action { _ =>
+  def step6_2 = Action { _ =>
     // 6. クラス
     // 6-2. フィールド
 
@@ -158,7 +158,7 @@ class Chapter2_6Controller @Inject()(val controllerComponents: ControllerCompone
 
   }
 
-  def chapter2_6_3 = Action { _ =>
+  def step6_3 = Action { _ =>
     // 6. クラス
     // 6-3. メソッド
 
@@ -227,7 +227,7 @@ class Chapter2_6Controller @Inject()(val controllerComponents: ControllerCompone
 
   }
 
-  def chapter2_6_4 = Action { _ =>
+  def step6_4 = Action { _ =>
     // 6. クラス
     // 6-4. メソッド2
 
@@ -302,7 +302,7 @@ class Chapter2_6Controller @Inject()(val controllerComponents: ControllerCompone
 
   }
 
-  def chapter2_6_5 = Action { _ =>
+  def step6_5 = Action { _ =>
     // 6. クラス
     // 6-5. 組込型の演算子とメソッド
 
@@ -342,7 +342,7 @@ class Chapter2_6Controller @Inject()(val controllerComponents: ControllerCompone
 
   }
 
-  def chapter2_6_6 = Action { _ =>
+  def step6_6 = Action { _ =>
     // 6. クラス
     // 6-6. クラスの継承
 
@@ -407,7 +407,7 @@ class Chapter2_6Controller @Inject()(val controllerComponents: ControllerCompone
 
   }
 
-  def chapter2_6_7 = Action { _ =>
+  def step6_7 = Action { _ =>
     // 6. クラス
     // 6-7. 抽象クラス
 
@@ -484,7 +484,7 @@ class Chapter2_6Controller @Inject()(val controllerComponents: ControllerCompone
 
   }
 
-  def chapter2_6_8 = Action { _ =>
+  def step6_8 = Action { _ =>
     // 6. クラス
     // 6-8. 型と継承と多態性
 
@@ -574,7 +574,7 @@ class Chapter2_6Controller @Inject()(val controllerComponents: ControllerCompone
          |""".stripMargin).as(HTML)
   }
 
-  def chapter2_6_9 = Action { _ =>
+  def step6_9 = Action { _ =>
     // 6. クラス
     // 6-9. Any型・Object型
 

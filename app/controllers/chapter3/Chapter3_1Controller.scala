@@ -1,13 +1,13 @@
-package controllers.chapter2
+package controllers.chapter3
 
 import play.api.mvc._
 
 import javax.inject._
 
 @Singleton
-class Chapter2_1Controller @Inject()(val controllerComponents: ControllerComponents) extends BaseController {
+class Chapter3_1Controller @Inject()(val controllerComponents: ControllerComponents) extends BaseController {
 
-  def chapter2_1_1 = Action { _ =>
+  def step1_1 = Action { _ =>
     // 1. 変数とリテラル
     // 1-1. 初めての変数(var)
 
@@ -29,7 +29,7 @@ class Chapter2_1Controller @Inject()(val controllerComponents: ControllerCompone
     // 自ずとわかってくると思います。
   }
 
-  def chapter2_1_2 = Action { _ =>
+  def step1_2 = Action { _ =>
     // 1. 変数とリテラル
     // 1-2. 文字列リテラル 
 
@@ -54,7 +54,7 @@ class Chapter2_1Controller @Inject()(val controllerComponents: ControllerCompone
     Ok("message").as(HTML)
   }
 
-  def chapter2_1_3 = Action { _ =>
+  def step1_3 = Action { _ =>
     // 1. 変数とリテラル
     // 1-3. 変数値の上書き 
 
@@ -66,7 +66,7 @@ class Chapter2_1Controller @Inject()(val controllerComponents: ControllerCompone
     Ok(message).as(HTML)
   }
 
-  def chapter2_1_4 = Action { _ =>
+  def step1_4 = Action { _ =>
     // 1. 変数とリテラル
     // 1-4. 初めてのval 
 

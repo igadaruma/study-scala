@@ -1,13 +1,13 @@
-package controllers.chapter2
+package controllers.chapter3
 
 import play.api.mvc._
 
 import javax.inject._
 
 @Singleton
-class Chapter2_4Controller @Inject()(val controllerComponents: ControllerComponents) extends BaseController {
+class Chapter3_4Controller @Inject()(val controllerComponents: ControllerComponents) extends BaseController {
 
-  def chapter2_4_1 = Action { _ =>
+  def step4_1 = Action { _ =>
     // 4. 繰り返しとコレクション
     // 4-1. List
 
@@ -57,7 +57,7 @@ class Chapter2_4Controller @Inject()(val controllerComponents: ControllerCompone
          |""".stripMargin).as(HTML)
   }
 
-  def chapter2_4_2 = Action { _ =>
+  def step4_2 = Action { _ =>
     // 4. 繰り返しとコレクション
     // 4-2. 繰り返し処理のためのfor式
 
@@ -118,7 +118,7 @@ class Chapter2_4Controller @Inject()(val controllerComponents: ControllerCompone
     // Listの親戚みたいなもん。ぐらいで捉えて頂いてOKです。
   }
 
-  def chapter2_4_3 = Action { _ =>
+  def step4_3 = Action { _ =>
     // 4. 繰り返しとコレクション
     // 4-3. 繰り返し処理のためのfor式 強化編その1 入れ子
 
@@ -163,7 +163,7 @@ class Chapter2_4Controller @Inject()(val controllerComponents: ControllerCompone
     Ok(kuku).as(HTML)
   }
 
-  def chapter2_4_4 = Action { _ =>
+  def step4_4 = Action { _ =>
     // 4. 繰り返しとコレクション
     // 4-4. 繰り返し処理のためのfor式 強化編その2 条件指定
 
@@ -201,7 +201,7 @@ class Chapter2_4Controller @Inject()(val controllerComponents: ControllerCompone
          |""".stripMargin).as(HTML)
   }
 
-  def chapter2_4_5 = Action { _ =>
+  def step4_5 = Action { _ =>
     // 4. 繰り返しとコレクション
     // 4-5. for式サヨナラ!?
 
