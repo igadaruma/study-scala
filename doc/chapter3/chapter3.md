@@ -64,7 +64,7 @@ Git -> Uncommitted Changes -> Rollback を選択して、
 
 |  タイトル   |  ファイル名 | サブタイトル  | 関数名(def) | URL | 
 | ---- | ---- | ---- | ---- | ---- |
-| 0. コメントとHTML | [Chapter3_0Controller](../../app/controllers/chapter3/Chapter3_0Controller.scala)  |  -  | step2_0 | http://localhost:9000/chapter3/0
+| 0. コメントとHTML | [Chapter3_0Controller](../../app/controllers/chapter3/Chapter3_0Controller.scala)  |  -  | step0 | http://localhost:9000/chapter3/0
 | 1. 変数とリテラル  | [Chapter3_1Controller](../../app/controllers/chapter3/Chapter3_1Controller.scala) |  1-1. 初めての変数(var) | step1_1 | http://localhost:9000/chapter3/1/1 |
 | | | 1-2. 文字列リテラル | step1_2 | http://localhost:9000/chapter3/1/2 |
 | | | 1-3. 変数値の上書き | step1_3 | http://localhost:9000/chapter3/1/3 |
