@@ -32,7 +32,7 @@ class Chapter3_0Controller @Inject()(val controllerComponents: ControllerCompone
     // 以下のような`Ok("HTML").as(HTML)`という形式のプログラムで、
     // ブラウザにHTMLが送られて画面に表示されるんだということをご納得くださいませ。約束だぞ🥺
     
-    Ok("ここにはHTMLを書きます。").as(HTML)
+    Ok("ここにはHTMLを書きます。").as(HTML) // こんな感じに行の途中からコメントを始めることもできます。
     //    ↑ ここの""で囲まれた中がいじりポイントだZO💘
   }
 
